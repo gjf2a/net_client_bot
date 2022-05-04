@@ -7,7 +7,7 @@ from pybricks.tools import wait, StopWatch, DataLog
 from pybricks.robotics import DriveBase
 from pybricks.media.ev3dev import SoundFile, ImageFile
 
-import threading
+from server import MessageHandler
 
 
 # This program requires LEGO EV3 MicroPython v2.0 or higher.
@@ -22,21 +22,6 @@ sonar = UltrasonicSensor(Port.S4)
 
 import sys
 print("Python version", sys.version)
-
-# Server class
-class MessageHandler(threading.Thread):
-    def __init__(self):
-        self.go = True
-        self.server = socket.
-
-    def run(self):
-        print("Starting thread")
-        x = 0
-        while True:
-            x += 1
-            if x % 1000 == 0:
-                self.go = not self.go
-        print("looped ", x, "times")
 
 mh = MessageHandler()
 mh.start()
