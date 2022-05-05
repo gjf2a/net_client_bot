@@ -1,3 +1,5 @@
+# Design inspired by: https://www.journaldev.com/15906/python-socket-programming-server-client
+
 import threading, socket, sys
 
 class MessageHandler(threading.Thread):
