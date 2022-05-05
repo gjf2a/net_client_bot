@@ -6,7 +6,7 @@ class MessageHandler(threading.Thread):
         self.go = True
         self.done = False
         server = socket.socket()
-        server.bind(('localhost', 8888))
+        server.bind(('0.0.0.0', 8888))
         server.listen(2)
         while not self.done:
             print("Preparing to accept connection...")
