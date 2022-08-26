@@ -24,14 +24,14 @@ import sys
 print("Python version", sys.version)
 
 mh = MessageHandler()
+mh.ev3 = ev3
 mh.start()
 
-# Write your program here.
 ev3.speaker.beep()
 
 while True:
     if mh.go:
-        if sonar.distance() < 150:
+        if sonar.distance() < 250:
             left.run(-360)
             right.run(360)
         else:
